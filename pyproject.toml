@@ -1,0 +1,11 @@
+[project]
+name = "trevanbox"
+version = "0.1.0"
+description = "TrevanBox : The Practice of the PARA Methodology Based on Obsidian." 
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "chardet>=5.2.0",
+    "pyyaml>=6.0.3",
+    "requests>=2.32.5",
+]
