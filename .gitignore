@@ -36,6 +36,7 @@ Thumbs.db
 
 # 忽略claude个人配置文件
 .claude/settings.local.json
+.mcp.json
 
 # 忽略obsidian和其他隐藏文件
 .trash

@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "weather_mcp": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "./scripts/mcp/weather_mcp_server.py"
+      ],
+      "env": {
+        "OPENWEATHER_API_KEY": "你的OpenWeatherMap密钥在这里"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "get_weather",
+        "get_current_weather"
+      ]
+    }
+  }
+}
