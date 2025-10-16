@@ -15,7 +15,8 @@
       "Read(//d/TrevanData/**)",
       "Bash(code:*)",
       "Bash(./preprocessor.sh:*)",
-      "Bash(head:*)"
+      "Bash(head:*)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []
