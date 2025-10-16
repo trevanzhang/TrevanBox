@@ -55,4 +55,8 @@
 *~
 *.*.sw[a-p]
 .gitignore
-
+pyproject.toml
+.python-version
+uv.lock
+CLAUDE.md
+CHANGELOG.md
