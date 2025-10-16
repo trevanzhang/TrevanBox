@@ -34,19 +34,36 @@ AI预处理器是TrevanBox系统的核心自动化组件，使用本地Ollama模
 ## 安装要求
 
 ### 系统依赖
-- Python 3.7+
+- **uv工具**：现代化Python包管理器
+- Python 3.7+（由uv自动管理）
 - Ollama服务运行在 `http://localhost:11434`
 - Bash shell环境
 
-### Python包
+### 快速环境设置
 ```bash
-pip install requests>=2.31.0 PyYAML>=6.0 chardet>=5.2.0
+# 1. 安装uv（如果没有）
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# 2. 在项目根目录创建虚拟环境
+uv venv .venv
+
+# 3. 安装Python依赖
+uv pip install requests>=2.31.0 PyYAML>=6.0 chardet>=5.2.0
+
+# 4. 验证环境
+./scripts/preprocessor.sh status
 ```
 
 ### Ollama模型
 ```bash
 ollama pull qwen3:8b
 ```
+
+### 环境优势
+- **10-100倍更快**：相比传统pip方式
+- **智能缓存**：避免重复下载
+- **跨平台兼容**：Windows/Linux/macOS统一体验
+- **自动依赖管理**：脚本自动检查和安装缺失依赖
 
 ## 配置说明
 
@@ -102,6 +119,8 @@ directory_mapping:
 
 ### 1. 通过主脚本使用（推荐）
 
+基于uv的现代化脚本，自动处理环境检查和依赖管理：
+
 ```bash
 # 检查系统状态
 ./scripts/preprocessor.sh status
@@ -116,19 +135,32 @@ directory_mapping:
 ./scripts/preprocessor.sh process follow clippings --move-to-inbox
 ```
 
-### 2. 直接使用Python脚本
+### 2. 直接使用Python脚本（高级用户）
 
 ```bash
 cd scripts/ollama
 
-# 检查状态
-python prehandler.py status
+# 使用uv运行Python脚本
+uv run --project ../.. python prehandler.py status
 
 # 处理单个目录
-python prehandler.py process manual --dry-run
+uv run --project ../.. python prehandler.py process manual --dry-run
 
 # 处理多个目录
-python prehandler.py process follow clippings --move-to-inbox
+uv run --project ../.. python prehandler.py process follow clippings --move-to-inbox
+```
+
+### 3. 使用Claude命令（需要Claude Code）
+
+```bash
+# 最简单的使用方式
+/para-process
+
+# 预览模式
+/para-process --dry-run
+
+# 处理特定目录
+/para-process process manual --move-to-inbox
 ```
 
 ## 处理流程
@@ -186,8 +218,14 @@ source: "manual"
 
 2. **Python依赖缺失**
    ```bash
-   # 安装依赖
-   pip install -r requirements.txt
+   # 重新安装依赖（使用uv）
+   cd ../../
+   rm -rf .venv
+   uv venv .venv
+   uv pip install requests pyyaml chardet
+
+   # 或使用脚本自动修复
+   ./scripts/preprocessor.sh status
    ```
 
 3. **文件编码问题**
@@ -233,11 +271,21 @@ export DEBUG=1
 
 ## 版本历史
 
-- **v1.0.0** (2025-10-15)
-  - 初始版本发布
-  - 支持基本的AI预处理功能
+- **v1.2.0** (2025-10-16)
+  - **uv现代化升级**：基于uv的Python环境管理
+  - **智能依赖处理**：自动检查和安装缺失依赖
+  - **性能优化**：10-100倍更快的依赖安装
+  - **跨平台兼容**：统一的使用体验
+  - **更好的错误处理**：用户友好的提示和解决方案
+
+- **v1.1.0** (2025-10-15)
   - 集成Ollama qwen3:8b模型
   - 完整的配置系统
+  - 支持基本的AI预处理功能
+
+- **v1.0.0** (2025-10-15)
+  - 初始版本发布
+  - 基础AI预处理功能
 
 ## 许可证
 
@@ -249,4 +297,25 @@ MIT License - 详见项目根目录的LICENSE文件
 
 ---
 
-**注意**：首次使用前请确保Ollama服务正常运行且已下载qwen3:8b模型。
+## 快速开始
+
+```bash
+# 1. 一键环境设置
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv venv .venv
+uv pip install requests pyyaml chardet
+
+# 2. 下载AI模型
+ollama pull qwen3:8b
+
+# 3. 测试系统
+./scripts/preprocessor.sh status
+
+# 4. 开始使用
+./scripts/preprocessor.sh process manual --dry-run
+```
+
+**注意**：首次使用前请确保：
+1. 已安装uv工具并创建了`.venv`虚拟环境
+2. Ollama服务正常运行且已下载qwen3:8b模型
+3. 项目根目录存在`CLAUDE.md`文件（用于项目识别）
