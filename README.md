@@ -1,270 +1,272 @@
-# TrevanBox - 个人认知增强操作系统
+# TrevanBox - Personal Cognitive Enhancement Operating System
 
-> **基于PARA方法论的个人知识管理系统，让信息为行动服务，让记录推动成长。**
+English | [中文版](README_CN.md)
 
-## 🎯 项目概述
+> **A personal knowledge management system based on PARA methodology, transforming information into actionable insights and records into catalysts for growth.**
 
-TrevanBox是一个基于PARA（Projects, Areas, Resources, Archives）方法论的个人认知增强操作系统。它不仅仅是笔记分类工具，更是一套完整的个人知识管理解决方案，帮助用户将散乱的信息转化为有序的知识，将日常记录转化为成长动力。
+## 🎯 Project Overview
 
-### 核心理念
-- **行动导向**：所有组织都是为了更好地行动
-- **成长驱动**：每个元素都应该服务于个人成长
-- **长期主义**：建立一个可以持续演进的系统
-- **极简主义**：最少的原则，最大的效果
+TrevanBox is a personal cognitive enhancement operating system built upon the PARA (Projects, Areas, Resources, Archives) methodology. It transcends conventional note-taking applications to provide a comprehensive personal knowledge management solution that empowers users to convert scattered information into organized knowledge and transform daily documentation into momentum for personal development.
 
-## 🏗️ 系统架构
+### Core Philosophy
+- **Action-Oriented**: All organizational structures serve to facilitate more effective action
+- **Growth-Driven**: Every element is designed to contribute to personal development
+- **Long-Term Vision**: Establish a system capable of sustainable evolution
+- **Minimalist Principles**: Maximum impact through essential guidelines
+
+## 🏗️ System Architecture
 
 ```
 TrevanBox/
-├── 0-Inbox/pending/          # 认知入口：新信息的暂存和处理
-├── 1-Projects/               # 行动焦点：短期目标的具体实现
-├── 2-Areas/                  # 生活支柱：长期责任的持续维护
-│   ├── Personal-Growth/      # 个人成长（包含日记记录）
-│   ├── Health/               # 健康管理
-│   ├── Finance/              # 财务规划
-│   ├── Career/               # 职业发展
-│   └── Family/               # 家庭生活
-├── 3-Resources/              # 知识储备：未来可能用到的内容
-├── 4-Archives/               # 经验沉淀：不再活跃但有价值的内容
-├── Assets/                   # 附件目录：用于存放obsidian的附件，请自行设置
-├── docs/                     # 系统文档：使用指南和规则说明
-├── scripts/                  # 自动化工具：减少认知负担
-├── templates/                # 思考框架：标准化的内容模板
-├── follow/                   # RSS导入：信息流的自动收集
-├── clippings/                # 网页摘录：灵感的快速捕捉
-├── readwise/                 # 阅读笔记：知识的系统化收集
-├── zotero/                   # 学术资源：研究内容的组织
-├── webdav/                   # 跨平台同步：多设备记录和云存储
-├── manual/                   # 手动导入：复制粘贴和自定义内容
-└── ainotes/                  # AI内容：保存AI生成的回答和创意
+├── 0-Inbox/pending/          # Cognitive Gateway: Temporary storage and processing of new information
+├── 1-Projects/               # Action Focus: Concrete implementation of short-term objectives
+├── 2-Areas/                  # Life Pillars: Continuous maintenance of long-term responsibilities
+│   ├── Personal-Growth/      # Personal Development (includes journal entries)
+│   ├── Health/               # Health Management
+│   ├── Finance/              # Financial Planning
+│   ├── Career/               # Professional Development
+│   └── Family/               # Family Life
+├── 3-Resources/              # Knowledge Repository: Content with potential future utility
+├── 4-Archives/               # Experience Accumulation: Inactive yet valuable content
+├── Assets/                   # Attachment Directory: Configure for Obsidian attachments
+├── docs/                     # System Documentation: Usage guides and protocol documentation
+├── scripts/                  # Automation Tools: Cognitive load reduction utilities
+├── templates/                # Thinking Frameworks: Standardized content templates
+├── follow/                   # RSS Import: Automated information stream collection
+├── clippings/                # Web Excerpts: Rapid capture of inspiration
+├── readwise/                 # Reading Notes: Systematic knowledge collection
+├── zotero/                   # Academic Resources: Research content organization
+├── webdav/                   # Cross-Platform Synchronization: Multi-device recording and cloud storage
+├── manual/                   # Manual Import: Copy-paste and custom content
+└── ainotes/                  # AI Content: Storage for AI-generated responses and creative ideas
 ```
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 1. 环境要求
-- **Obsidian**：推荐v1.7+版本
-- **Python 3.8+**：用于AI预处理器和自动化脚本
-- **uv**：现代化的Python包管理器（推荐）
-- **Ollama**：本地AI模型运行（可选，用于智能处理）
-- **操作系统**：支持Windows、macOS、Linux
-- **可选插件**：Templater、Dataview、QuickAdd
+### 1. System Requirements
+- **Obsidian**: Recommended v1.7+ or later
+- **Python 3.8+**: Required for AI preprocessor and automation scripts
+- **uv**: Modern Python package manager (highly recommended)
+- **Ollama**: Local AI model execution (optional, for intelligent processing)
+- **Operating System**: Compatible with Windows, macOS, Linux
+- **Optional Plugins**: Templater, Dataview, QuickAdd
 
-### 2. 快速安装
+### 2. Installation
 
-#### 方法一：使用uv（推荐）
+#### Method 1: Using uv (Recommended)
 ```bash
-# 1. 安装uv（如果尚未安装）
+# 1. Install uv (if not already installed)
 curl -LsSf https://astral.sh/uv/install.sh | sh  # Linux/macOS
-# 或访问 https://docs.astral.sh/uv/getting-started/installation/ 查看Windows安装方法
+# Or visit https://docs.astral.sh/uv/getting-started/installation/ for Windows installation
 
-# 2. 克隆项目
+# 2. Clone the repository
 git clone https://github.com/your-username/TrevanBox.git
 cd TrevanBox
 
-# 3. 启动AI预处理器（自动创建虚拟环境和安装依赖）
+# 3. Launch AI preprocessor (automatically creates virtual environment and installs dependencies)
 ./scripts/preprocessor.sh --help
 ```
 
-#### 方法二：传统Python环境
+#### Method 2: Traditional Python Environment
 ```bash
-# 1. 克隆项目
+# 1. Clone the repository
 git clone https://github.com/your-username/TrevanBox.git
 cd TrevanBox
 
-# 2. 创建虚拟环境
+# 2. Create virtual environment
 python -m venv .venv
 source .venv/bin/activate  # Linux/macOS
-# 或 .venv\Scripts\activate  # Windows
+# or .venv\Scripts\activate  # Windows
 
-# 3. 安装依赖
+# 3. Install dependencies
 pip install -r requirements.txt
 ```
 
-### 3. 基础配置
-1. **Obsidian设置**：打开项目根目录，配置核心插件
-2. **AI模型配置**：启动Ollama，下载所需模型（如qwen2.5:7b）
-3. **元数据标准**：采用YAML frontmatter格式
-4. **标签系统**：使用结构化标签进行内容分类
-5. **文件命名**：英文目录命名，日记文件使用YYYY-MM-DD.md格式
+### 3. Basic Configuration
+1. **Obsidian Setup**: Open project root directory, configure core plugins
+2. **AI Model Configuration**: Launch Ollama, download required models (e.g., qwen2.5:7b)
+3. **Metadata Standards**: Adopt YAML frontmatter format
+4. **Tag System**: Utilize structured tags for content classification
+5. **File Naming**: English directory names, journal files in YYYY-MM-DD.md format
 
-## 📋 核心功能
+## 📋 Core Features
 
-### PARA分类系统
-- **Projects（项目）**：有明确完成目标的短期工作
-- **Areas（领域）**：需要长期维护的职责和责任
-- **Resources（资源）**：未来可能有用的话题或兴趣
-- **Archives（存档）**：前三类中不再活跃的内容
+### PARA Classification System
+- **Projects**: Short-term endeavors with clear completion objectives
+- **Areas**: Long-term responsibilities requiring continuous maintenance
+- **Resources**: Topics or interests with potential future utility
+- **Archives**: Inactive content from the previous three categories
 
-### 导入来源
-- **follow**：RSS订阅内容自动收集
-- **clippings**：Obsidian浏览器插件摘录
-- **readwise**：阅读笔记系统化收集
-- **zotero**：学术文献和参考资料
-- **webdav**：跨平台云存储同步
-- **manual**：手动导入和复制粘贴
-- **ainotes**：AI生成内容保存
+### Import Sources
+- **follow**: Automated RSS subscription content collection
+- **clippings**: Obsidian browser plugin excerpts
+- **readwise**: Systematic reading notes collection
+- **zotero**: Academic literature and reference materials
+- **webdav**: Cross-platform cloud storage synchronization
+- **manual**: Manual import and copy-paste content
+- **ainotes**: AI-generated content preservation
 
-### AI智能化工具
-- **preprocessor.sh**：基于uv的AI预处理器，智能内容分析和元数据生成
-- **ollama/prehandler.py**：AI预处理核心，支持自动分类和标签推荐
-- **专业AI助手代理系统**：18个专业代理覆盖数据分析、研究分析、生产力等核心领域
+### AI-Powered Intelligent Tools
+- **preprocessor.sh**: uv-based AI preprocessor for intelligent content analysis and metadata generation
+- **ollama/prehandler.py**: Core AI preprocessing engine supporting automatic classification and tag recommendations
+- **Professional AI Assistant Agent System**: 18 specialized agents covering core domains including data analysis, research analysis, and productivity enhancement
 
-### 自动化工具
-- **cleanup.sh**：清理导入目录，移动到待处理
-- **move-to-inbox.sh**：文件移动操作
-- **Claude命令系统**：完整的PARA工作流命令集（详见docs/claude-commands.md）
+### Automation Tools
+- **cleanup.sh**: Clean import directories, move to pending processing
+- **move-to-inbox.sh**: File relocation operations
+- **Claude Command System**: Complete PARA workflow command suite (see docs/claude-commands.md)
 
-### 模板系统
-- **项目笔记模板**：目标+截止日期+行动项
-- **领域维护模板**：标准+检查频率
-- **资源收集模板**：实用性+难度评估
-- **日记模板**：成长记录+反思+连接
-- **导入内容模板**：标准化+分类建议
+### Template System
+- **Project Note Template**: Objectives + Deadlines + Action Items
+- **Area Maintenance Template**: Standards + Review Frequency
+- **Resource Collection Template**: Utility + Difficulty Assessment
+- **Journal Template**: Growth Records + Reflections + Connections
+- **Imported Content Template**: Standardization + Classification Suggestions
 
-## 🔄 工作流程
+## 🔄 Workflow
 
-### 日常使用
-1. **智能内容处理**：导入→`/para-process` AI分析→`/para-organize` 智能分类→PARA分配
-2. **项目推进**：`/para-project` 创建和管理项目→集中相关资源→专注推进→完成归档
-3. **领域维护**：`/para-area` 检查领域健康度→评估维护质量→孵化新项目→持续改进
-4. **资源收集**：3-Resources中按兴趣收集→定期评估实用性→按需归档
-5. **日记写作**：每日记录→发现行动项→链接到相关PARA内容
-6. **系统回顾**：`/para-review` 标准化回顾→总结经验→调整计划→持续优化
+### Daily Operations
+1. **Intelligent Content Processing**: Import → `/para-process` AI Analysis → `/para-organize` Intelligent Classification → PARA Distribution
+2. **Project Advancement**: `/para-project` Create and manage projects → Consolidate relevant resources → Focus on execution → Complete and archive
+3. **Area Maintenance**: `/para-area` Check area health → Assess maintenance quality → Incubate new projects → Continuous improvement
+4. **Resource Collection**: Collect by interest in 3-Resources → Periodically evaluate utility → Archive as needed
+5. **Journal Writing**: Daily documentation → Identify action items → Link to relevant PARA content
+6. **System Review**: `/para-review` Standardized review → Summarize experiences → Adjust plans → Continuous optimization
 
-### 维护节奏
-- **每周5分钟**：重命名、归类、更新项目状态
-- **每月回顾**：评估领域维护质量，清理过时资源
-- **季度深度回顾**：从存档中寻找可复用材料，调整PARA结构
+### Maintenance Rhythm
+- **Weekly 5-Minute Review**: Rename, categorize, update project status
+- **Monthly Review**: Evaluate area maintenance quality, clean outdated resources
+- **Quarterly Deep Review**: Identify reusable materials from archives, adjust PARA structure
 
-## 📚 文档结构
+## 📚 Documentation Structure
 
-| 文档 | 说明 |
-|------|------|
-| [CLAUDE.md](./CLAUDE.md) | 系统宣言与架构指南 |
-| [CHANGELOG.md](./CHANGELOG.md) | 版本更新记录和认知演进 |
-| [docs/para-rules.md](./docs/para-rules.md) | PARA分类规则详细说明 |
-| [docs/tag-system.md](./docs/tag-system.md) | 标签系统使用指南 |
-| [docs/journal-guide.md](./docs/journal-guide.md) | 日记整合PARA实践指南 |
-| [docs/claude-commands.md](./docs/claude-commands.md) | Claude命令系统完整指南 |
-| [docs/agents.md](./docs/agents.md) | 专业AI助手代理系统指南 |
-| [docs/ai-preprocessor.md](./docs/ai-preprocessor.md) | AI预处理器使用说明 |
+| Document | Description |
+|----------|-------------|
+| [CLAUDE.md](./CLAUDE.md) | System Manifesto and Architecture Guide |
+| [CHANGELOG.md](./CHANGELOG.md) | Version Update Records and Cognitive Evolution |
+| [docs/para-rules.md](./docs/para-rules.md) | Detailed PARA Classification Rules |
+| [docs/tag-system.md](./docs/tag-system.md) | Tag System Usage Guide |
+| [docs/journal-guide.md](./docs/journal-guide.md) | Journal Integration with PARA Practice Guide |
+| [docs/claude-commands.md](./docs/claude-commands.md) | Complete Claude Command System Guide |
+| [docs/agents.md](./docs/agents.md) | Professional AI Assistant Agent System Guide |
+| [docs/ai-preprocessor.md](./docs/ai-preprocessor.md) | AI Preprocessor Usage Instructions |
 
-## 🛠️ 技术规范
+## 🛠️ Technical Specifications
 
-### 元数据标准
+### Metadata Standards
 ```yaml
 ---
-created: 2025-10-15T10:30:00+08:00    # 创建时间（ISO格式）
-updated: 2025-10-15T18:45:00+08:00    # 更新时间
-status: sprout|evergreen|discharged    # 内容生命周期状态
-type: project|area|resource|journal    # 内容类型分类
-tags: [标签1, 标签2]                   # 结构化标签
-area: "Personal-Growth"                # 所属领域（可选）
+created: 2025-10-15T10:30:00+08:00    # Creation time (ISO format)
+updated: 2025-10-15T18:45:00+08:00    # Update time
+status: sprout|evergreen|discharged    # Content lifecycle status
+type: project|area|resource|journal    # Content type classification
+tags: [tag1, tag2]                     # Structured tags
+area: "Personal-Growth"                #所属领域 (optional)
 ---
 ```
 
-### 标签分类
-- **来源标签**：#follow、#clippings、#readwise、#zotero、#webdav、#manual、#ainotes
-- **状态标签**：#待处理、#已处理、#需要整理、#待归档
-- **PARA分类标签**：#project/active、#area/health、#resource/learning等
-- **内容类型标签**：#摘录、#想法、#任务、#会议、#学习等
-- **优先级标签**：#高优先级、#中优先级、#低优先级
+### Tag Classification
+- **Source Tags**: #follow, #clippings, #readwise, #zotero, #webdav, #manual, #ainotes
+- **Status Tags**: #pending, #processed, #needs-organization, #to-archive
+- **PARA Classification Tags**: #project/active, #area/health, #resource/learning, etc.
+- **Content Type Tags**: #excerpt, #idea, #task, #meeting, #learning, etc.
+- **Priority Tags**: #high-priority, #medium-priority, #low-priority
 
-## 🎯 适用场景
+## 🎯 Use Cases
 
-### 个人用户
-- **知识管理**：系统化收集、整理、检索个人知识
-- **项目管理**：短期目标的规划和执行跟踪
-- **成长记录**：个人发展和学习轨迹的可视化
-- **创意管理**：灵感收集和创意孵化
+### Individual Users
+- **Knowledge Management**: Systematic collection, organization, and retrieval of personal knowledge
+- **Project Management**: Planning and execution tracking of short-term objectives
+- **Growth Documentation**: Visualization of personal development and learning trajectories
+- **Creative Management**: Inspiration collection and idea incubation
 
-### 专业人士
-- **研究工作者**：文献管理和知识体系构建
-- **内容创作者**：素材收集和创作流程管理
-- **产品经理**：需求整理和项目推进
-- **自由职业者**：多项目管理和知识复用
+### Professionals
+- **Researchers**: Literature management and knowledge system construction
+- **Content Creators**: Material collection and creative workflow management
+- **Product Managers**: Requirement organization and project advancement
+- **Freelancers**: Multi-project management and knowledge reuse
 
-## 🔮 未来发展
+## 🔮 Future Development
 
-### 当前阶段（v1.2.1）- 专业AI助手集成 ✅
-- 完整PARA体系搭建
-- 标准化元数据系统
-- 基础自动化脚本
-- 日记整合到成长领域
-- 文档和模板系统
-- **AI预处理器集成**：基于Ollama的智能内容分析
-- **Claude命令系统**：完整的PARA工作流命令集
-- **自动化元数据生成**：标题、标签、摘要自动提取
-- **智能分类建议**：AI辅助的PARA分类推荐
-- **uv环境管理**：统一的Python环境和依赖管理
-- **智能依赖处理**：自动检查和安装缺失依赖
-- **跨平台兼容**：Windows/Linux/macOS统一体验
-- **专业AI助手代理系统**：18个专业代理覆盖核心领域
-- **代理协作工作流**：数据分析、研究分析、生产力提升三类协作模式
-- **智能工具集成**：每个代理配备专业工具集，支持复杂任务处理
-- **多语言支持**：中文和英文代理，满足不同使用场景
+### Current Phase (v1.2.1) - Professional AI Assistant Integration ✅
+- Complete PARA system architecture
+- Standardized metadata system
+- Fundamental automation scripts
+- Journal integration into growth domain
+- Documentation and template system
+- **AI Preprocessor Integration**: Ollama-based intelligent content analysis
+- **Claude Command System**: Complete PARA workflow command suite
+- **Automated Metadata Generation**: Automatic extraction of titles, tags, and summaries
+- **Intelligent Classification Suggestions**: AI-assisted PARA classification recommendations
+- **uv Environment Management**: Unified Python environment and dependency management
+- **Intelligent Dependency Handling**: Automatic checking and installation of missing dependencies
+- **Cross-Platform Compatibility**: Unified experience across Windows/Linux/macOS
+- **Professional AI Assistant Agent System**: 18 specialized agents covering core domains
+- **Agent Collaboration Workflows**: Three collaboration modes for data analysis, research analysis, and productivity enhancement
+- **Intelligent Tool Integration**: Each agent equipped with professional toolsets supporting complex task processing
+- **Multi-Language Support**: Chinese and English agents for diverse usage scenarios
 
-### 下一阶段（v2.0）- 深度智能化
-- 自动关联发现和知识图谱构建
-- 个性化使用模式学习和优化
-- 跨领域内容关联和推荐
-- 智能目标规划和进度跟踪
+### Next Phase (v2.0) - Deep Intelligence
+- Automatic relationship discovery and knowledge graph construction
+- Personalized usage pattern learning and optimization
+- Cross-domain content association and recommendations
+- Intelligent goal planning and progress tracking
 
-### 未来阶段（v3.0）- 认知助手
-- 个人认知模式分析和个性化建议
-- 基于历史数据的智能目标规划
-- 知识缺口识别和学习路径推荐
-- 创意激发和思维工具集成
+### Future Phase (v3.0) - Cognitive Assistant
+- Personal cognitive pattern analysis and personalized recommendations
+- Historical data-based intelligent goal planning
+- Knowledge gap identification and learning path recommendations
+- Creative stimulation and thinking tool integration
 
-## 🤝 贡献指南
+## 🤝 Contributing Guidelines
 
-### 问题反馈
-- 使用Issues报告bug和功能需求
-- 提供详细的问题描述和复现步骤
-- 包含系统环境和使用场景信息
+### Issue Reporting
+- Use Issues to report bugs and feature requests
+- Provide detailed problem descriptions and reproduction steps
+- Include system environment and usage scenario information
 
-### 功能建议
-- 在Issues中提出功能改进建议
-- 说明使用场景和预期效果
-- 提供具体的实现思路
+### Feature Suggestions
+- Propose feature improvement suggestions in Issues
+- Describe use cases and expected outcomes
+- Provide specific implementation approaches
 
-### 文档完善
-- 帮助完善使用文档和最佳实践
-- 分享个人使用经验和技巧
-- 翻译文档到其他语言
+### Documentation Enhancement
+- Help improve usage documentation and best practices
+- Share personal usage experiences and techniques
+- Translate documentation to other languages
 
-## 📄 许可证
+## 📄 License
 
-本项目采用MIT许可证，详见[LICENSE](./LICENSE)文件。
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
-## 🙏 致谢
+## 🙏 Acknowledgments
 
-- **PARA方法论**：感谢Tiago Forte提出的PARA知识管理方法
-- **Obsidian社区**：感谢广大用户分享的最佳实践和经验
-- **开源项目**：感谢所有为本项目提供灵感的开源工具
+- **PARA Methodology**: Thanks to Tiago Forte for proposing the PARA knowledge management method
+- **Obsidian Community**: Thanks to the extensive user base for sharing best practices and experiences
+- **Open Source Projects**: Thanks to all open-source tools that provided inspiration for this project
 
-## 🛠️ 开发环境
+## 🛠️ Development Environment
 
-### Python环境管理（基于uv）
-- **统一环境管理**：使用uv工具管理所有Python依赖和虚拟环境
-- **自动依赖安装**：脚本启动时自动检查并安装缺失的依赖包
-- **智能缓存优化**：利用uv的高效缓存和并行处理能力
-- **跨平台兼容**：Windows/Linux/macOS统一的使用体验
-- **环境隔离**：`.venv`目录确保项目环境独立，避免依赖冲突
+### Python Environment Management (uv-based)
+- **Unified Environment Management**: Use uv tool to manage all Python dependencies and virtual environments
+- **Automatic Dependency Installation**: Scripts automatically check and install missing dependency packages at startup
+- **Intelligent Cache Optimization**: Leverage uv's efficient caching and parallel processing capabilities
+- **Cross-Platform Compatibility**: Unified user experience across Windows/Linux/macOS
+- **Environment Isolation**: `.venv` directory ensures project environment independence, avoiding dependency conflicts
 
-### AI模型集成
-- **Ollama集成**：支持本地AI模型运行，保护数据隐私
-- **智能内容处理**：自动分析、分类、生成元数据
-- **多模型支持**：支持qwen2.5、llama3等多种模型
-- **自定义提示词**：可配置的AI处理模板
+### AI Model Integration
+- **Ollama Integration**: Support local AI model execution, protecting data privacy
+- **Intelligent Content Processing**: Automatic analysis, classification, and metadata generation
+- **Multi-Model Support**: Support for qwen2.5, llama3, and various other models
+- **Custom Prompts**: Configurable AI processing templates
 
 ---
 
-**项目版本**：v1.2.1
-**创建时间**：2025-10-15
-**最后更新**：2025-10-17
-**维护者**：TrevanBox Team
-**核心理念**：让信息为行动服务，让记录推动成长
-**技术特性**：AI智能处理、Claude命令集成、PARA方法论实践、uv环境管理、专业AI助手代理系统
+**Project Version**: v1.2.1
+**Creation Date**: 2025-10-15
+**Last Updated**: 2025-10-17
+**Maintainers**: TrevanBox Team
+**Core Philosophy**: Transforming information into actionable insights and records into catalysts for growth
+**Technical Features**: AI intelligent processing, Claude command integration, PARA methodology implementation, uv environment management, professional AI assistant agent system
 
-*这不是一个工具，而是一种思维方式的系统化实现。*
+*This is not merely a tool, but a systematic implementation of a cognitive methodology.*
