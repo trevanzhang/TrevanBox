@@ -14,7 +14,8 @@
       "Bash(chmod:*)",
       "Read(//d/TrevanData/**)",
       "Bash(code:*)",
-      "Bash(./preprocessor.sh:*)"
+      "Bash(./preprocessor.sh:*)",
+      "Bash(head:*)"
     ],
     "deny": [],
     "ask": []
