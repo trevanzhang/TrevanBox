@@ -107,6 +107,7 @@ pip install -r requirements.txt
 ### AI智能化工具
 - **preprocessor.sh**：基于uv的AI预处理器，智能内容分析和元数据生成
 - **ollama/prehandler.py**：AI预处理核心，支持自动分类和标签推荐
+- **专业AI助手代理系统**：18个专业代理覆盖数据分析、研究分析、生产力等核心领域
 
 ### 自动化工具
 - **cleanup.sh**：清理导入目录，移动到待处理
@@ -145,6 +146,7 @@ pip install -r requirements.txt
 | [docs/tag-system.md](./docs/tag-system.md) | 标签系统使用指南 |
 | [docs/journal-guide.md](./docs/journal-guide.md) | 日记整合PARA实践指南 |
 | [docs/claude-commands.md](./docs/claude-commands.md) | Claude命令系统完整指南 |
+| [docs/agents.md](./docs/agents.md) | 专业AI助手代理系统指南 |
 | [docs/ai-preprocessor.md](./docs/ai-preprocessor.md) | AI预处理器使用说明 |
 
 ## 🛠️ 技术规范
@@ -184,7 +186,7 @@ area: "Personal-Growth"                # 所属领域（可选）
 
 ## 🔮 未来发展
 
-### 当前阶段（v1.2）- uv现代化升级 ✅
+### 当前阶段（v1.2.1）- 专业AI助手集成 ✅
 - 完整PARA体系搭建
 - 标准化元数据系统
 - 基础自动化脚本
@@ -197,6 +199,10 @@ area: "Personal-Growth"                # 所属领域（可选）
 - **uv环境管理**：统一的Python环境和依赖管理
 - **智能依赖处理**：自动检查和安装缺失依赖
 - **跨平台兼容**：Windows/Linux/macOS统一体验
+- **专业AI助手代理系统**：18个专业代理覆盖核心领域
+- **代理协作工作流**：数据分析、研究分析、生产力提升三类协作模式
+- **智能工具集成**：每个代理配备专业工具集，支持复杂任务处理
+- **多语言支持**：中文和英文代理，满足不同使用场景
 
 ### 下一阶段（v2.0）- 深度智能化
 - 自动关联发现和知识图谱构建
@@ -254,11 +260,11 @@ area: "Personal-Growth"                # 所属领域（可选）
 
 ---
 
-**项目版本**：v1.2.0
+**项目版本**：v1.2.1
 **创建时间**：2025-10-15
-**最后更新**：2025-10-16
+**最后更新**：2025-10-17
 **维护者**：TrevanBox Team
 **核心理念**：让信息为行动服务，让记录推动成长
-**技术特性**：AI智能处理、Claude命令集成、PARA方法论实践、uv环境管理
+**技术特性**：AI智能处理、Claude命令集成、PARA方法论实践、uv环境管理、专业AI助手代理系统
 
 *这不是一个工具，而是一种思维方式的系统化实现。*

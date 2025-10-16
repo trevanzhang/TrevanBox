@@ -137,6 +137,36 @@ area: "Personal-Growth"                # 所属领域（可选）
 
 详细使用说明参见：`docs/claude-commands.md`
 
+### 专业AI助手代理系统（PARA工作流智能增强）
+基于Claude的专业AI助手代理集合，为PARA工作流提供全方位的专业支持：
+
+**代理分类体系**：
+- **数据分析类**（3个）：data-analyst, data-scientist, data-researcher
+- **研究分析类**（5个）：research-analyst, competitive-analyst, market-researcher, trend-analyst, article-behavior-analyst
+- **生产力方法论类**（3个）：para-methodology-expert, gtd-efficiency-master, flash-notes-expert
+- **专业咨询类**（4个）：legal-advisor, internal-control-consultant, state-owned-risk-manager, weekly-report-assistant
+- **技术开发类**（3个）：prompt-engineer, knowledge-synthesizer, english-translator-improver
+
+**核心代理特色**：
+- **para-methodology-expert**：PARA方法论专家，提供系统化知识管理指导
+- **gtd-efficiency-master**：GTD效率大师，协助建立无压生产力系统
+- **research-analyst**：综合研究专家，支持深度信息分析和洞察生成
+- **data-analyst**：数据分析专家，提供商业智能和数据可视化支持
+- **weekly-report-assistant**：周报助手，基于经理框架扩展详细报告
+
+**智能协作模式**：
+- **数据分析工作流**：data-researcher → data-analyst → data-scientist
+- **研究分析工作流**：research-analyst → competitive-analyst → trend-analyst
+- **生产力提升工作流**：flash-notes-expert → para-methodology-expert → gtd-efficiency-master
+
+**代理集成优势**：
+- **专业领域覆盖**：18个专业代理覆盖个人生产力、知识管理、数据分析等核心领域
+- **智能工具集成**：每个代理配备专业工具集，支持复杂任务处理
+- **语言本地化**：中文代理提供符合本土文化习惯的专业指导
+- **协作效率**：代理间可协同工作，形成完整的问题解决链条
+
+详细代理说明参见：`docs/agents.md`
+
 ## 使用指南
 
 ### 日常使用
@@ -188,7 +218,7 @@ area: "Personal-Growth"                # 所属领域（可选）
 
 ## 演进路线
 
-### 当前阶段（v1.2）- uv现代化升级
+### 当前阶段（v1.2）- 专业AI助手集成
 - ✅ 完整PARA体系搭建
 - ✅ 标准化元数据系统
 - ✅ 基础自动化脚本
@@ -201,6 +231,10 @@ area: "Personal-Growth"                # 所属领域（可选）
 - ✅ **uv环境管理**：统一的Python环境和依赖管理
 - ✅ **智能依赖处理**：自动检查和安装缺失依赖
 - ✅ **跨平台兼容**：Windows/Linux/macOS统一体验
+- ✅ **专业AI助手代理系统**：18个专业代理覆盖核心领域
+- ✅ **代理协作工作流**：数据分析、研究分析、生产力提升三类协作模式
+- ✅ **智能工具集成**：每个代理配备专业工具集，支持复杂任务处理
+- ✅ **多语言支持**：中文和英文代理，满足不同使用场景
 
 ### 下一阶段（v2.0）- 深度智能化
 - 🔄 自动关联发现和知识图谱构建
@@ -232,10 +266,10 @@ area: "Personal-Growth"                # 所属领域（可选）
 
 **系统版本**：v1.2.0
 **创建时间**：2025-10-15
-**最后更新**：2025-10-16
+**最后更新**：2025-10-17
 **核心理念**：让信息为行动服务，让记录推动成长
 **适用场景**：个人知识管理、项目推进、成长追踪、认知增强
-**技术特性**：AI智能处理、Claude命令集成、PARA方法论实践、uv环境管理
+**技术特性**：AI智能处理、Claude命令集成、PARA方法论实践、uv环境管理、专业AI助手代理系统
 
 *这不是一个工具，而是一种思维方式的系统化实现。*
 

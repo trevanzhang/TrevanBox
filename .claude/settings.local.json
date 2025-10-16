@@ -28,5 +28,9 @@
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "enabledMcpjsonServers": [
+    "weather_mcp"
+  ],
+  "enableAllProjectMcpServers": true
 }
