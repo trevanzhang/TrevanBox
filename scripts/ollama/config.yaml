@@ -1,0 +1,55 @@
+# TrevanBox AI预处理器配置
+
+ollama:
+  base_url: "http://localhost:11434"
+  model: "qwen3:8b"
+  timeout: 30
+  retry: 3
+
+metadata:
+  default_status: "sprout"
+  default_type: "note"
+  standard_fields:
+    - "created"
+    - "updated"
+    - "status"
+    - "type"
+    - "tags"
+    - "area"
+    - "title"
+    - "description"
+
+processing:
+  max_file_size: 10485760  # 10MB
+  encoding_detection: true
+  backup_enabled: true
+  move_to_inbox: false  # 处理完成后是否移动到待处理目录
+
+ai:
+  title_max_length: 15
+  tags_max_count: 7
+  summary_length: 200
+
+# 目录映射配置
+directory_mapping:
+  follow:
+    tag: "follow"
+    type: "article"
+  clippings:
+    tag: "clippings"
+    type: "excerpt"
+  readwise:
+    tag: "readwise"
+    type: "reading"
+  zotero:
+    tag: "zotero"
+    type: "reference"
+  webdav:
+    tag: "webdav"
+    type: "sync"
+  manual:
+    tag: "manual"
+    type: "note"
+  ainotes:
+    tag: "ainotes"
+    type: "ai"

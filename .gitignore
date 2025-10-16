@@ -1,0 +1,58 @@
+# TrevanBox Git忽略文件
+# 只对特定文件和目录进行版本控制，其他所有内容都不追踪
+
+# 追踪的目录和文件
+!.claude/
+!docs/
+!templates/
+!scripts/
+!CLAUDE.md
+!README.md
+!LICENSE
+
+# 忽略PARA系统目录
+0-Inbox/
+1-Projects/
+2-Areas/
+3-Resources/
+4-Archives/
+
+# 忽略导入目录
+follow/
+clippings/
+readwise/
+zotero/
+webdav/
+manual/
+ainotes/
+
+# 忽略CHANGELOG.md
+CHANGELOG.md
+
+# 忽略系统文件
+.DS_Store
+Thumbs.db
+.stignore
+*.tmp
+*.bak
+*.swp
+*~
+
+# 忽略obsidian和其他隐藏文件
+.trash
+.obsidian/
+.obsidian.vimrc
+Excalidraw/
+Homepage.md
+
+# 忽略IDE配置
+.vscode/
+.idea/
+*.code-workspace
+
+# 忽略日志文件
+*.log
+
+# 忽略临时文件
+temp/
+tmp/
