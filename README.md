@@ -26,6 +26,7 @@ TrevanBox/
 │   └── Family/               # 家庭生活
 ├── 3-Resources/              # 知识储备：未来可能用到的内容
 ├── 4-Archives/               # 经验沉淀：不再活跃但有价值的内容
+├── Assets/                   # 附件目录：用于存放obsidian的附件，请自行设置
 ├── docs/                     # 系统文档：使用指南和规则说明
 ├── scripts/                  # 自动化工具：减少认知负担
 ├── templates/                # 思考框架：标准化的内容模板

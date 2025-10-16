@@ -20,7 +20,11 @@
       "Bash(for:*)",
       "Bash(done)",
       "Bash(do echo:*)",
-      "Bash(stat:*)"
+      "Bash(stat:*)",
+      "Bash(do if [ -d \"$dir\" ])",
+      "Bash(then echo \"=== $dir 目录 ===\")",
+      "Bash(ls:*)",
+      "Bash(fi:*)"
     ],
     "deny": [],
     "ask": []
