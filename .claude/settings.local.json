@@ -16,7 +16,11 @@
       "Bash(code:*)",
       "Bash(./preprocessor.sh:*)",
       "Bash(head:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(for:*)",
+      "Bash(done)",
+      "Bash(do echo:*)",
+      "Bash(stat:*)"
     ],
     "deny": [],
     "ask": []

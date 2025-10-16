@@ -42,18 +42,49 @@ TrevanBox/
 
 ### 1. 环境要求
 - **Obsidian**：推荐v1.7+版本
+- **Python 3.8+**：用于AI预处理器和自动化脚本
+- **uv**：现代化的Python包管理器（推荐）
+- **Ollama**：本地AI模型运行（可选，用于智能处理）
 - **操作系统**：支持Windows、macOS、Linux
 - **可选插件**：Templater、Dataview、QuickAdd
 
-### 2. 目录设置
-1. 克隆或下载此项目到本地
-2. 在Obsidian中打开项目根目录
-3. 根据个人需求调整目录结构和模板
+### 2. 快速安装
+
+#### 方法一：使用uv（推荐）
+```bash
+# 1. 安装uv（如果尚未安装）
+curl -LsSf https://astral.sh/uv/install.sh | sh  # Linux/macOS
+# 或访问 https://docs.astral.sh/uv/getting-started/installation/ 查看Windows安装方法
+
+# 2. 克隆项目
+git clone https://github.com/your-username/TrevanBox.git
+cd TrevanBox
+
+# 3. 启动AI预处理器（自动创建虚拟环境和安装依赖）
+./scripts/preprocessor.sh --help
+```
+
+#### 方法二：传统Python环境
+```bash
+# 1. 克隆项目
+git clone https://github.com/your-username/TrevanBox.git
+cd TrevanBox
+
+# 2. 创建虚拟环境
+python -m venv .venv
+source .venv/bin/activate  # Linux/macOS
+# 或 .venv\Scripts\activate  # Windows
+
+# 3. 安装依赖
+pip install -r requirements.txt
+```
 
 ### 3. 基础配置
-1. **元数据标准**：采用YAML frontmatter格式
-2. **标签系统**：使用结构化标签进行内容分类
-3. **文件命名**：英文目录命名，日记文件使用YYYY-MM-DD.md格式
+1. **Obsidian设置**：打开项目根目录，配置核心插件
+2. **AI模型配置**：启动Ollama，下载所需模型（如qwen2.5:7b）
+3. **元数据标准**：采用YAML frontmatter格式
+4. **标签系统**：使用结构化标签进行内容分类
+5. **文件命名**：英文目录命名，日记文件使用YYYY-MM-DD.md格式
 
 ## 📋 核心功能
 
@@ -72,11 +103,14 @@ TrevanBox/
 - **manual**：手动导入和复制粘贴
 - **ainotes**：AI生成内容保存
 
+### AI智能化工具
+- **preprocessor.sh**：基于uv的AI预处理器，智能内容分析和元数据生成
+- **ollama/prehandler.py**：AI预处理核心，支持自动分类和标签推荐
+
 ### 自动化工具
 - **cleanup.sh**：清理导入目录，移动到待处理
-- **add-metadata.sh**：批量添加标准化元数据
 - **move-to-inbox.sh**：文件移动操作
-- **weekly-review.sh**：生成系统状态报告
+- **Claude命令系统**：完整的PARA工作流命令集（详见docs/claude-commands.md）
 
 ### 模板系统
 - **项目笔记模板**：目标+截止日期+行动项
@@ -88,11 +122,12 @@ TrevanBox/
 ## 🔄 工作流程
 
 ### 日常使用
-1. **新内容处理**：导入→自动添加来源标签→移动到pending→分类处理
-2. **项目推进**：选择活跃项目→集中相关资源→专注推进
-3. **领域维护**：定期检查各领域→评估维护质量→孵化新项目
-4. **资源收集**：按兴趣收集→评估实用性→按需归档
+1. **智能内容处理**：导入→`/para-process` AI分析→`/para-organize` 智能分类→PARA分配
+2. **项目推进**：`/para-project` 创建和管理项目→集中相关资源→专注推进→完成归档
+3. **领域维护**：`/para-area` 检查领域健康度→评估维护质量→孵化新项目→持续改进
+4. **资源收集**：3-Resources中按兴趣收集→定期评估实用性→按需归档
 5. **日记写作**：每日记录→发现行动项→链接到相关PARA内容
+6. **系统回顾**：`/para-review` 标准化回顾→总结经验→调整计划→持续优化
 
 ### 维护节奏
 - **每周5分钟**：重命名、归类、更新项目状态
@@ -108,6 +143,8 @@ TrevanBox/
 | [docs/para-rules.md](./docs/para-rules.md) | PARA分类规则详细说明 |
 | [docs/tag-system.md](./docs/tag-system.md) | 标签系统使用指南 |
 | [docs/journal-guide.md](./docs/journal-guide.md) | 日记整合PARA实践指南 |
+| [docs/claude-commands.md](./docs/claude-commands.md) | Claude命令系统完整指南 |
+| [docs/ai-preprocessor.md](./docs/ai-preprocessor.md) | AI预处理器使用说明 |
 
 ## 🛠️ 技术规范
 
@@ -146,22 +183,30 @@ area: "Personal-Growth"                # 所属领域（可选）
 
 ## 🔮 未来发展
 
-### v1.0 - 基础框架 ✅
+### 当前阶段（v1.2）- uv现代化升级 ✅
 - 完整PARA体系搭建
 - 标准化元数据系统
 - 基础自动化脚本
 - 日记整合到成长领域
+- 文档和模板系统
+- **AI预处理器集成**：基于Ollama的智能内容分析
+- **Claude命令系统**：完整的PARA工作流命令集
+- **自动化元数据生成**：标题、标签、摘要自动提取
+- **智能分类建议**：AI辅助的PARA分类推荐
+- **uv环境管理**：统一的Python环境和依赖管理
+- **智能依赖处理**：自动检查和安装缺失依赖
+- **跨平台兼容**：Windows/Linux/macOS统一体验
 
-### v2.0 - 智能化增强（规划中）
-- AI辅助内容分类和标签推荐
-- 自动关联发现和知识图谱
-- 智能内容摘要和重点提取
-- 个性化使用模式学习
+### 下一阶段（v2.0）- 深度智能化
+- 自动关联发现和知识图谱构建
+- 个性化使用模式学习和优化
+- 跨领域内容关联和推荐
+- 智能目标规划和进度跟踪
 
-### v3.0 - 认知助手（愿景）
-- 个人认知模式分析和建议
-- 基于历史数据的目标规划
-- 知识缺口识别和学习推荐
+### 未来阶段（v3.0）- 认知助手
+- 个人认知模式分析和个性化建议
+- 基于历史数据的智能目标规划
+- 知识缺口识别和学习路径推荐
 - 创意激发和思维工具集成
 
 ## 🤝 贡献指南
@@ -191,11 +236,28 @@ area: "Personal-Growth"                # 所属领域（可选）
 - **Obsidian社区**：感谢广大用户分享的最佳实践和经验
 - **开源项目**：感谢所有为本项目提供灵感的开源工具
 
+## 🛠️ 开发环境
+
+### Python环境管理（基于uv）
+- **统一环境管理**：使用uv工具管理所有Python依赖和虚拟环境
+- **自动依赖安装**：脚本启动时自动检查并安装缺失的依赖包
+- **智能缓存优化**：利用uv的高效缓存和并行处理能力
+- **跨平台兼容**：Windows/Linux/macOS统一的使用体验
+- **环境隔离**：`.venv`目录确保项目环境独立，避免依赖冲突
+
+### AI模型集成
+- **Ollama集成**：支持本地AI模型运行，保护数据隐私
+- **智能内容处理**：自动分析、分类、生成元数据
+- **多模型支持**：支持qwen2.5、llama3等多种模型
+- **自定义提示词**：可配置的AI处理模板
+
 ---
 
-**项目版本**：v1.0.0
+**项目版本**：v1.2.0
 **创建时间**：2025-10-15
+**最后更新**：2025-10-16
 **维护者**：TrevanBox Team
 **核心理念**：让信息为行动服务，让记录推动成长
+**技术特性**：AI智能处理、Claude命令集成、PARA方法论实践、uv环境管理
 
 *这不是一个工具，而是一种思维方式的系统化实现。*
