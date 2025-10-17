@@ -14,8 +14,26 @@ TrevanBox是一个基于PARA（Projects, Areas, Resources, Archives）方法论�
 
 ## 🏗️ 系统架构
 
+**项目模板结构**（本仓库）
 ```
 TrevanBox/
+├── .claude/                   # Claude Code配置和AI代理
+├── docs/                     # 系统文档：使用指南和规则说明
+├── scripts/                  # 自动化工具：减少认知负担
+├── templates/                # 思考框架：标准化的内容模板
+├── .venv/                    # Python虚拟环境（由uv管理）
+├── CLAUDE.md                 # 系统宣言与架构指南
+├── README.md                 # 项目文档（英文版）
+├── README_CN.md              # 项目文档（中文版）
+├── CHANGELOG.md              # 版本历史和演进记录
+├── LICENSE                   # MIT许可证
+├── pyproject.toml            # Python项目配置
+└── uv.lock                   # 依赖锁定文件
+```
+
+**目标PARA结构**（初始化后）
+```
+您的TrevanBox/
 ├── 0-Inbox/pending/          # 认知入口：新信息的暂存和处理
 ├── 1-Projects/               # 行动焦点：短期目标的具体实现
 ├── 2-Areas/                  # 生活支柱：长期责任的持续维护
@@ -27,9 +45,6 @@ TrevanBox/
 ├── 3-Resources/              # 知识储备：未来可能用到的内容
 ├── 4-Archives/               # 经验沉淀：不再活跃但有价值的内容
 ├── Assets/                   # 附件目录：用于存放obsidian的附件，请自行设置
-├── docs/                     # 系统文档：使用指南和规则说明
-├── scripts/                  # 自动化工具：减少认知负担
-├── templates/                # 思考框架：标准化的内容模板
 ├── follow/                   # RSS导入：信息流的自动收集
 ├── clippings/                # 网页摘录：灵感的快速捕捉
 ├── readwise/                 # 阅读笔记：知识的系统化收集
@@ -262,7 +277,7 @@ area: "Personal-Growth"                # 所属领域（可选）
 
 **项目版本**：v1.2.1
 **创建时间**：2025-10-15
-**最后更新**：2025-10-17
+**最后更新**：2025-10-18
 **维护者**：TrevanBox Team
 **核心理念**：让信息为行动服务，让记录推动成长
 **技术特性**：AI智能处理、Claude命令集成、PARA方法论实践、uv环境管理、专业AI助手代理系统

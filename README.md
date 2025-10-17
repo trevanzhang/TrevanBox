@@ -16,8 +16,26 @@ TrevanBox is a personal cognitive enhancement operating system built upon the PA
 
 ## 🏗️ System Architecture
 
+**Project Template Structure** (This Repository)
 ```
 TrevanBox/
+├── .claude/                   # Claude Code configuration and AI agents
+├── docs/                     # System Documentation: Usage guides and protocol documentation
+├── scripts/                  # Automation Tools: Cognitive load reduction utilities
+├── templates/                # Thinking Frameworks: Standardized content templates
+├── .venv/                    # Python virtual environment (managed by uv)
+├── CLAUDE.md                 # System manifesto and architecture guide
+├── README.md                 # Project documentation (English)
+├── README_CN.md              # Project documentation (Chinese)
+├── CHANGELOG.md              # Version history and evolution records
+├── LICENSE                   # MIT license
+├── pyproject.toml            # Python project configuration
+└── uv.lock                   # Dependency lock file
+```
+
+**Target PARA Structure** (After Initial Setup)
+```
+Your TrevanBox/
 ├── 0-Inbox/pending/          # Cognitive Gateway: Temporary storage and processing of new information
 ├── 1-Projects/               # Action Focus: Concrete implementation of short-term objectives
 ├── 2-Areas/                  # Life Pillars: Continuous maintenance of long-term responsibilities
@@ -29,9 +47,6 @@ TrevanBox/
 ├── 3-Resources/              # Knowledge Repository: Content with potential future utility
 ├── 4-Archives/               # Experience Accumulation: Inactive yet valuable content
 ├── Assets/                   # Attachment Directory: Configure for Obsidian attachments
-├── docs/                     # System Documentation: Usage guides and protocol documentation
-├── scripts/                  # Automation Tools: Cognitive load reduction utilities
-├── templates/                # Thinking Frameworks: Standardized content templates
 ├── follow/                   # RSS Import: Automated information stream collection
 ├── clippings/                # Web Excerpts: Rapid capture of inspiration
 ├── readwise/                 # Reading Notes: Systematic knowledge collection
@@ -264,7 +279,7 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 **Project Version**: v1.2.1
 **Creation Date**: 2025-10-15
-**Last Updated**: 2025-10-17
+**Last Updated**: 2025-10-18
 **Maintainers**: TrevanBox Team
 **Core Philosophy**: Transforming information into actionable insights and records into catalysts for growth
 **Technical Features**: AI intelligent processing, Claude command integration, PARA methodology implementation, uv environment management, professional AI assistant agent system
