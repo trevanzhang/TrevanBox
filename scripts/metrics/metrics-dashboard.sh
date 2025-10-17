@@ -15,7 +15,9 @@ NC='\033[0m' # No Color
 # 获取脚本所在目录
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASE_DIR="$(dirname "$SCRIPT_DIR")"
-REPORTS_DIR="$BASE_DIR/docs/reports"
+# 修复：根据PARA方法论，将报告存储在Personal-Growth领域
+CURRENT_YEAR=$(date +"%Y")
+REPORTS_DIR="$BASE_DIR/2-Areas/Personal-Growth/review/$CURRENT_YEAR/metrics"
 
 # 创建报告目录
 mkdir -p "$REPORTS_DIR"

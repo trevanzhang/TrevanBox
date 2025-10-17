@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 TrevanBox 高级度量分析工具
 提供深度的系统健康度分析和趋势追踪功能
@@ -32,7 +33,9 @@ class TrevanBoxMetricsAnalyzer:
 
     def __init__(self, base_path: str = "."):
         self.base_path = Path(base_path)
-        self.reports_dir = self.base_path / "docs" / "reports"
+        # 修复：根据PARA方法论，将报告存储在Personal-Growth领域
+        current_year = datetime.datetime.now().year
+        self.reports_dir = self.base_path / "2-Areas" / "Personal-Growth" / "review" / str(current_year) / "metrics"
         self.reports_dir.mkdir(parents=True, exist_ok=True)
         self.history_file = self.reports_dir / "metrics_history.json"
 
@@ -46,7 +49,7 @@ class TrevanBoxMetricsAnalyzer:
 
     def analyze_system(self) -> SystemMetrics:
         """分析系统状态，返回度量数据"""
-        print("🔍 开始分析系统状态...")
+        print("[TrevanBox] 开始分析系统状态...")
 
         # 基础统计
         para_stats = self._analyze_para_distribution()
@@ -76,12 +79,12 @@ class TrevanBoxMetricsAnalyzer:
             growth_metrics=growth_metrics
         )
 
-        print(f"✅ 分析完成，总体健康度: {overall_health:.1f}/100")
+        print(f"[TrevanBox] 分析完成，总体健康度: {overall_health:.1f}/100")
         return metrics
 
     def _analyze_para_distribution(self) -> Dict[str, Dict[str, float]]:
         """分析PARA分布"""
-        print("📁 分析PARA分布...")
+        print("[TrevanBox] 分析PARA分布...")
 
         distribution = {}
         total_files = 0
@@ -111,7 +114,7 @@ class TrevanBoxMetricsAnalyzer:
 
     def _analyze_pending_items(self) -> Dict[str, int]:
         """分析待处理项目"""
-        print("⏳ 分析待处理项目...")
+        print("[TrevanBox] 分析待处理项目...")
 
         pending_dir = self.base_path / "0-Inbox" / "pending"
         if not pending_dir.exists():
@@ -132,7 +135,7 @@ class TrevanBoxMetricsAnalyzer:
 
     def _analyze_content_quality(self) -> Dict[str, float]:
         """分析内容质量"""
-        print("📝 分析内容质量...")
+        print("[TrevanBox] 分析内容质量...")
 
         total_files = 0
         files_with_metadata = 0
@@ -174,7 +177,7 @@ class TrevanBoxMetricsAnalyzer:
 
     def _analyze_efficiency(self) -> Dict[str, float]:
         """分析效率指标"""
-        print("⚡ 分析效率指标...")
+        print("[TrevanBox] 分析效率指标...")
 
         # 这里可以根据实际情况添加更多效率指标
         # 目前提供基础的结构，用户可以根据需要扩展
@@ -188,7 +191,7 @@ class TrevanBoxMetricsAnalyzer:
 
     def _analyze_growth(self) -> Dict[str, float]:
         """分析成长指标"""
-        print("🌱 分析成长指标...")
+        print("[TrevanBox] 分析成长指标...")
 
         # 从历史数据中计算增长趋势
         history = self._load_history()
@@ -553,7 +556,7 @@ class TrevanBoxMetricsAnalyzer:
 
     def run_analysis(self, save_history: bool = True, generate_report: bool = True) -> str:
         """运行完整分析流程"""
-        print("🚀 开始TrevanBox系统度量分析...")
+        print("[TrevanBox] 开始系统度量分析...")
 
         # 分析系统
         metrics = self.analyze_system()
@@ -561,19 +564,19 @@ class TrevanBoxMetricsAnalyzer:
         # 保存历史数据
         if save_history:
             self._save_history(metrics)
-            print("💾 历史数据已保存")
+            print("[TrevanBox] 历史数据已保存")
 
         # 生成报告
         report_path = ""
         if generate_report:
             report_path = self.generate_report(metrics)
-            print(f"📊 详细报告已生成: {report_path}")
+            print(f"[TrevanBox] 详细报告已生成: {report_path}")
 
         # 显示关键结果
         print("\n" + "="*50)
-        print("📋 分析结果摘要")
+        print("[TrevanBox] 分析结果摘要")
         print("="*50)
-        print(f"总体健康度: {metrics.overall_health}/100 {self._get_health_emoji(metrics.overall_health)}")
+        print(f"总体健康度: {metrics.overall_health}/100")
         print(f"文件总数: {metrics.total_files}")
         print(f"待处理积压: {metrics.pending_items} 项 (最旧: {metrics.oldest_pending_age} 天)")
         print(f"内容质量: {metrics.content_quality['overall_quality']:.1f}/100")
@@ -599,10 +602,10 @@ def main():
         )
 
         if not args.quiet and report_path:
-            print(f"\n📄 查看详细报告: {report_path}")
+            print(f"\n[TrevanBox] 查看详细报告: {report_path}")
 
     except Exception as e:
-        print(f"❌ 分析过程中出现错误: {e}")
+        print(f"[ERROR] 分析过程中出现错误: {e}")
         return 1
 
     return 0
