@@ -1,7 +1,7 @@
 ---
 created: <% tp.date.now("YYYY-MM-DDTHH:mm:ssZ") %>
 updated: <% tp.date.now("YYYY-MM-DDTHH:mm:ssZ") %>
-status: discharged
+status: evergreen
 type: journal
 tags: [日记, <% tp.date.now("YYYY-MM-DD") %>]
 date: <% tp.date.now("YYYY-MM-DD") %>
@@ -44,6 +44,8 @@ area: "Personal-Growth"
 
 ## 💡 明日计划
 <!-- 为明天做准备的提醒 -->
+
+<< [[<% tp.date.now("YYYY-MM-DD", -1) %>]] | [[<% tp.date.now("YYYY-MM-DD", 1) %>]] >>
 
 ---
 
