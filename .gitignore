@@ -25,6 +25,7 @@ zotero/
 webdav/
 manual/
 ainotes/
+fleeting/
 
 # 忽略系统文件
 .DS_Store
