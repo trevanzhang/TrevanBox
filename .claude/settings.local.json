@@ -24,13 +24,16 @@
       "Bash(do if [ -d \"$dir\" ])",
       "Bash(then echo \"=== $dir 目录 ===\")",
       "Bash(ls:*)",
-      "Bash(fi:*)"
+      "Bash(fi:*)",
+      "Bash(git checkout:*)",
+      "mcp__obsidian-mcp-server__obsidian_list_notes",
+      "mcp__weather__get-current-weather"
     ],
     "deny": [],
     "ask": []
   },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "weather_mcp"
-  ],
-  "enableAllProjectMcpServers": true
+  ]
 }
