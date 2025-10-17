@@ -39,6 +39,7 @@ Thumbs.db
 .mcp.json
 
 # 忽略obsidian和其他隐藏文件
+.stfolder/
 .trash
 .obsidian/
 .obsidian.vimrc
