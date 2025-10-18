@@ -7,6 +7,7 @@
 TrevanBox是一个基于PARA（Projects, Areas, Resources, Archives）方法论的个人认知增强操作系统。它不仅仅是笔记分类工具，更是一套完整的个人知识管理解决方案，帮助用户将散乱的信息转化为有序的知识，将日常记录转化为成长动力。
 
 ### 核心理念
+
 - **行动导向**：所有组织都是为了更好地行动
 - **成长驱动**：每个元素都应该服务于个人成长
 - **长期主义**：建立一个可以持续演进的系统
@@ -14,26 +15,8 @@ TrevanBox是一个基于PARA（Projects, Areas, Resources, Archives）方法论�
 
 ## 🏗️ 系统架构
 
-**项目模板结构**（本仓库）
 ```
 TrevanBox/
-├── .claude/                   # Claude Code配置和AI代理
-├── docs/                     # 系统文档：使用指南和规则说明
-├── scripts/                  # 自动化工具：减少认知负担
-├── templates/                # 思考框架：标准化的内容模板
-├── .venv/                    # Python虚拟环境（由uv管理）
-├── CLAUDE.md                 # 系统宣言与架构指南
-├── README.md                 # 项目文档（英文版）
-├── README_CN.md              # 项目文档（中文版）
-├── CHANGELOG.md              # 版本历史和演进记录
-├── LICENSE                   # MIT许可证
-├── pyproject.toml            # Python项目配置
-└── uv.lock                   # 依赖锁定文件
-```
-
-**目标PARA结构**（初始化后）
-```
-您的TrevanBox/
 ├── 0-Inbox/pending/          # 认知入口：新信息的暂存和处理
 ├── 1-Projects/               # 行动焦点：短期目标的具体实现
 ├── 2-Areas/                  # 生活支柱：长期责任的持续维护
@@ -45,7 +28,11 @@ TrevanBox/
 ├── 3-Resources/              # 知识储备：未来可能用到的内容
 ├── 4-Archives/               # 经验沉淀：不再活跃但有价值的内容
 ├── Assets/                   # 附件目录：用于存放obsidian的附件，请自行设置
+├── docs/                     # 系统文档：使用指南和规则说明
+├── scripts/                  # 自动化工具：减少认知负担
+├── templates/                # 思考框架：标准化的内容模板
 ├── follow/                   # RSS导入：信息流的自动收集
+├── fleeting/                 # 闪念笔记：灵感一闪的想法收集(结合第三方工具)
 ├── clippings/                # 网页摘录：灵感的快速捕捉
 ├── readwise/                 # 阅读笔记：知识的系统化收集
 ├── zotero/                   # 学术资源：研究内容的组织
@@ -57,6 +44,7 @@ TrevanBox/
 ## 🚀 快速开始
 
 ### 1. 环境要求
+
 - **Obsidian**：推荐v1.7+版本
 - **Python 3.8+**：用于AI预处理器和自动化脚本
 - **uv**：现代化的Python包管理器（推荐）
@@ -67,6 +55,7 @@ TrevanBox/
 ### 2. 快速安装
 
 #### 方法一：使用uv（推荐）
+
 ```bash
 # 1. 安装uv（如果尚未安装）
 curl -LsSf https://astral.sh/uv/install.sh | sh  # Linux/macOS
@@ -81,6 +70,7 @@ cd TrevanBox
 ```
 
 #### 方法二：传统Python环境
+
 ```bash
 # 1. 克隆项目
 git clone https://github.com/your-username/TrevanBox.git
@@ -96,6 +86,7 @@ pip install -r requirements.txt
 ```
 
 ### 3. 基础配置
+
 1. **Obsidian设置**：打开项目根目录，配置核心插件
 2. **AI模型配置**：启动Ollama，下载所需模型（如qwen2.5:7b）
 3. **元数据标准**：采用YAML frontmatter格式
@@ -105,12 +96,14 @@ pip install -r requirements.txt
 ## 📋 核心功能
 
 ### PARA分类系统
+
 - **Projects（项目）**：有明确完成目标的短期工作
 - **Areas（领域）**：需要长期维护的职责和责任
 - **Resources（资源）**：未来可能有用的话题或兴趣
 - **Archives（存档）**：前三类中不再活跃的内容
 
 ### 导入来源
+
 - **follow**：RSS订阅内容自动收集
 - **clippings**：Obsidian浏览器插件摘录
 - **readwise**：阅读笔记系统化收集
@@ -120,16 +113,19 @@ pip install -r requirements.txt
 - **ainotes**：AI生成内容保存
 
 ### AI智能化工具
+
 - **preprocessor.sh**：基于uv的AI预处理器，智能内容分析和元数据生成
 - **ollama/prehandler.py**：AI预处理核心，支持自动分类和标签推荐
 - **专业AI助手代理系统**：18个专业代理覆盖数据分析、研究分析、生产力等核心领域
 
 ### 自动化工具
+
 - **cleanup.sh**：清理导入目录，移动到待处理
 - **move-to-inbox.sh**：文件移动操作
 - **Claude命令系统**：完整的PARA工作流命令集（详见docs/claude-commands.md）
 
 ### 模板系统
+
 - **项目笔记模板**：目标+截止日期+行动项
 - **领域维护模板**：标准+检查频率
 - **资源收集模板**：实用性+难度评估
@@ -139,6 +135,7 @@ pip install -r requirements.txt
 ## 🔄 工作流程
 
 ### 日常使用
+
 1. **智能内容处理**：导入→`/para-process` AI分析→`/para-organize` 智能分类→PARA分配
 2. **项目推进**：`/para-project` 创建和管理项目→集中相关资源→专注推进→完成归档
 3. **领域维护**：`/para-area` 检查领域健康度→评估维护质量→孵化新项目→持续改进
@@ -147,26 +144,28 @@ pip install -r requirements.txt
 6. **系统回顾**：`/para-review` 标准化回顾→总结经验→调整计划→持续优化
 
 ### 维护节奏
+
 - **每周5分钟**：重命名、归类、更新项目状态
 - **每月回顾**：评估领域维护质量，清理过时资源
 - **季度深度回顾**：从存档中寻找可复用材料，调整PARA结构
 
 ## 📚 文档结构
 
-| 文档 | 说明 |
-|------|------|
-| [CLAUDE.md](./CLAUDE.md) | 系统宣言与架构指南 |
-| [CHANGELOG.md](./CHANGELOG.md) | 版本更新记录和认知演进 |
-| [docs/para-rules.md](./docs/para-rules.md) | PARA分类规则详细说明 |
-| [docs/tag-system.md](./docs/tag-system.md) | 标签系统使用指南 |
-| [docs/journal-guide.md](./docs/journal-guide.md) | 日记整合PARA实践指南 |
+| 文档                                              | 说明                   |
+| ------------------------------------------------- | ---------------------- |
+| [CLAUDE.md](./CLAUDE.md)                             | 系统宣言与架构指南     |
+| [CHANGELOG.md](./CHANGELOG.md)                       | 版本更新记录和认知演进 |
+| [docs/para-rules.md](./docs/para-rules.md)           | PARA分类规则详细说明   |
+| [docs/tag-system.md](./docs/tag-system.md)           | 标签系统使用指南       |
+| [docs/journal-guide.md](./docs/journal-guide.md)     | 日记整合PARA实践指南   |
 | [docs/claude-commands.md](./docs/claude-commands.md) | Claude命令系统完整指南 |
-| [docs/agents.md](./docs/agents.md) | 专业AI助手代理系统指南 |
-| [docs/ai-preprocessor.md](./docs/ai-preprocessor.md) | AI预处理器使用说明 |
+| [docs/agents.md](./docs/agents.md)                   | 专业AI助手代理系统指南 |
+| [docs/ai-preprocessor.md](./docs/ai-preprocessor.md) | AI预处理器使用说明     |
 
 ## 🛠️ 技术规范
 
 ### 元数据标准
+
 ```yaml
 ---
 created: 2025-10-15T10:30:00+08:00    # 创建时间（ISO格式）
@@ -179,6 +178,7 @@ area: "Personal-Growth"                # 所属领域（可选）
 ```
 
 ### 标签分类
+
 - **来源标签**：#follow、#clippings、#readwise、#zotero、#webdav、#manual、#ainotes
 - **状态标签**：#待处理、#已处理、#需要整理、#待归档
 - **PARA分类标签**：#project/active、#area/health、#resource/learning等
@@ -188,12 +188,14 @@ area: "Personal-Growth"                # 所属领域（可选）
 ## 🎯 适用场景
 
 ### 个人用户
+
 - **知识管理**：系统化收集、整理、检索个人知识
 - **项目管理**：短期目标的规划和执行跟踪
 - **成长记录**：个人发展和学习轨迹的可视化
 - **创意管理**：灵感收集和创意孵化
 
 ### 专业人士
+
 - **研究工作者**：文献管理和知识体系构建
 - **内容创作者**：素材收集和创作流程管理
 - **产品经理**：需求整理和项目推进
@@ -202,6 +204,7 @@ area: "Personal-Growth"                # 所属领域（可选）
 ## 🔮 未来发展
 
 ### 当前阶段（v1.2.1）- 专业AI助手集成 ✅
+
 - 完整PARA体系搭建
 - 标准化元数据系统
 - 基础自动化脚本
@@ -220,12 +223,14 @@ area: "Personal-Growth"                # 所属领域（可选）
 - **多语言支持**：中文和英文代理，满足不同使用场景
 
 ### 下一阶段（v2.0）- 深度智能化
+
 - 自动关联发现和知识图谱构建
 - 个性化使用模式学习和优化
 - 跨领域内容关联和推荐
 - 智能目标规划和进度跟踪
 
 ### 未来阶段（v3.0）- 认知助手
+
 - 个人认知模式分析和个性化建议
 - 基于历史数据的智能目标规划
 - 知识缺口识别和学习路径推荐
@@ -234,16 +239,19 @@ area: "Personal-Growth"                # 所属领域（可选）
 ## 🤝 贡献指南
 
 ### 问题反馈
+
 - 使用Issues报告bug和功能需求
 - 提供详细的问题描述和复现步骤
 - 包含系统环境和使用场景信息
 
 ### 功能建议
+
 - 在Issues中提出功能改进建议
 - 说明使用场景和预期效果
 - 提供具体的实现思路
 
 ### 文档完善
+
 - 帮助完善使用文档和最佳实践
 - 分享个人使用经验和技巧
 - 翻译文档到其他语言
@@ -261,6 +269,7 @@ area: "Personal-Growth"                # 所属领域（可选）
 ## 🛠️ 开发环境
 
 ### Python环境管理（基于uv）
+
 - **统一环境管理**：使用uv工具管理所有Python依赖和虚拟环境
 - **自动依赖安装**：脚本启动时自动检查并安装缺失的依赖包
 - **智能缓存优化**：利用uv的高效缓存和并行处理能力
@@ -268,6 +277,7 @@ area: "Personal-Growth"                # 所属领域（可选）
 - **环境隔离**：`.venv`目录确保项目环境独立，避免依赖冲突
 
 ### AI模型集成
+
 - **Ollama集成**：支持本地AI模型运行，保护数据隐私
 - **智能内容处理**：自动分析、分类、生成元数据
 - **多模型支持**：支持qwen2.5、llama3等多种模型
@@ -277,7 +287,7 @@ area: "Personal-Growth"                # 所属领域（可选）
 
 **项目版本**：v1.2.1
 **创建时间**：2025-10-15
-**最后更新**：2025-10-18
+**最后更新**：2025-10-17
 **维护者**：TrevanBox Team
 **核心理念**：让信息为行动服务，让记录推动成长
 **技术特性**：AI智能处理、Claude命令集成、PARA方法论实践、uv环境管理、专业AI助手代理系统
