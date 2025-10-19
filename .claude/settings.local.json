@@ -29,7 +29,8 @@
       "mcp__obsidian-mcp-server__obsidian_list_notes",
       "mcp__weather__get-current-weather",
       "WebFetch(domain:www.anthropic.com)",
-      "Skill(writing-diary)"
+      "Skill(writing-diary)",
+      "Skill(writing-weekly-report)"
     ],
     "deny": [],
     "ask": []

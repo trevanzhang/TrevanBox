@@ -5,6 +5,7 @@ description = "TrevanBox : The Practice of the PARA Methodology Based on Obsidia
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "beautifulsoup4>=4.14.2",
     "chardet>=5.2.0",
     "pyyaml>=6.0.3",
     "requests>=2.32.5",
